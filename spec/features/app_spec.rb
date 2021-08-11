@@ -1,10 +1,15 @@
 require 'spec_helper'
 
 describe "message", type: :feature do
+  # it 'displays message Testing infrastructure working!' do
+  #   visit('/')
+  #   expect(page).to have_content 'Testing infrastructure working!'
+  # end
 
-
-  it 'displays message Testing infrastructure working!' do
+  it 'allows players to enter their names' do
     visit('/')
-    expect(page).to have_content 'Testing infrastructure working!'
+    fill_in('name', with: 'Zainab')
+    click_on('Submit')
+    expect(page).to have_content('Zainab')
   end
 end
