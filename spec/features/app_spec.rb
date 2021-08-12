@@ -12,4 +12,10 @@ describe "message", type: :feature do
     sign_in_and_play
     expect(page).to have_content("Player 2\nHP: 100")
   end
+
+  it "allows us to attack player 2" do
+    sign_in_and_play
+    click_button('attack')
+    expect(page).to have_content("Player 2 attacked!")
+  end
 end
