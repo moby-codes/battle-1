@@ -4,6 +4,8 @@ class Battle < Sinatra::Base
 enable :sessions
  
   get '/' do
+    session[:player2_hp] = 100
+
     erb :index
   end
 
@@ -16,6 +18,8 @@ enable :sessions
   get '/play' do
     @player1 = session[:player1]
     @player2 = session[:player2]
+    @player2_hp = session[:player2_hp]
+    
     erb :play
   end
 
