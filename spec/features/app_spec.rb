@@ -8,8 +8,10 @@ describe "message", type: :feature do
 
   it 'allows players to enter their names' do
     visit('/')
-    fill_in('name', with: 'Zainab')
+    fill_in('player1', with: 'Zainab')
+    fill_in('player2', with: 'Ali')
     click_on('Submit')
     expect(page).to have_content('Zainab')
+    expect(page).to have_content('Ali')
   end
 end
