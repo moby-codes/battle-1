@@ -15,7 +15,7 @@ describe "message", type: :feature do
 
   it "allows us to attack player 2" do
     sign_in_and_play
-    click_button('attack')
-    expect(page).to have_content("Player 2 attacked!")
+    click_button('Attack!')
+    expect(page).to have_content("Zainab attacked Ali!")
   end
 end

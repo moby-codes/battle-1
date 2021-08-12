@@ -15,10 +15,17 @@ enable :sessions
     redirect '/play'
   end
 
+  post '/attack' do
+    session[:last_move] = "#{session[:player1]} attacked #{session[:player2]}!"
+    redirect '/play'
+  end
+
   get '/play' do
     @player1 = session[:player1]
     @player2 = session[:player2]
     @player2_hp = session[:player2_hp]
+    @last_move = session[:last_move]
+
     erb :play
   end
 
