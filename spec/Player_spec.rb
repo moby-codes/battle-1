@@ -21,13 +21,5 @@ describe Player do
 
   end
 
-  describe '#attack' do
-
-    it 'is expected to attack' do
-      expect{ player1.attack(player2) }.to change{ player2.hit_points }.by (-10)
-    end
-
-  end
-
 end
 

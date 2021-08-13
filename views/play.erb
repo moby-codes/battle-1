@@ -1,9 +1,9 @@
 
-<h1>Hello <%= @player1 %> and <%= @player2 %></h1>
+<h1>Hello <%= @game.player1.name %> and <%= @game.player2.name %></h1>
 <h1>Get ready for battle!!!</h1>
 
-<h2>Player 2</h2>
-<h3>HP: 100</h3>
+<h2><%= @game.player2.name %></h2>
+<h3>HP: <%= @game.player2.hit_points %></h3>
 
 <%# <input type=button onClick="location.href='../play'" name="last_move" value='Attack!'> %>
 <form action='/attack' method="get">
