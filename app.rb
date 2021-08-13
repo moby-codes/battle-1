@@ -15,9 +15,10 @@ enable :sessions
     redirect '/play'
   end
 
-  post '/attack' do
-    session[:last_move] = "#{session[:player1]} attacked #{session[:player2]}!"
-    redirect '/play'
+  get '/attack' do
+    @player1 = session[:player1] 
+    @player2 = session[:player2]
+    erb :attack
   end
 
   get '/play' do
@@ -28,9 +29,6 @@ enable :sessions
 
     erb :play
   end
-
-
-
 
   run! if app_file == $0
 end
