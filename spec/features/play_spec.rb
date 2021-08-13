@@ -5,3 +5,4 @@ feature "player hit points" do
     expect(page).to have_content("Player 2\nHP: 100")
   end
 end
+
